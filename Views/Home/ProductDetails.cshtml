@@ -1,0 +1,163 @@
+﻿@model MainPageModel
+@{
+    ViewData["Title"] = "ProductDetails";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<!-- Single product area start  -->
+<div class="shop-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="back-to-category">
+                    Category:
+                    <a title="@Model.CategoryName" class="product-details" href="/Home/CategoryPage/@Model.CategoryID">@Model.CategoryName</a>
+                </div>
+                <div class="clear"></div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-5 col-lg-5">
+                        <div class="product-view">
+                            <div class="full-product-img">
+                                <div class="tab-content">
+                                    <div id="home" class="tab-pane fade in active">
+                                        <img class="zoom_01" src='~/img/@Model.DetailsOfProduct.PhotoPath' data-zoom-image="~/img/@Model.DetailsOfProduct.PhotoPath" alt="" style="height:400px;" />
+                                    </div>
+
+                                    <div id="menu1" class="tab-pane fade">
+                                        <img class="zoom_01 " src='~/img/@Model.DetailsOfProduct.PhotoPath' data-zoom-image="~/img/@Model.DetailsOfProduct.PhotoPath" alt="" style="height:400px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-7 col-lg-7">
+                        <div class="single-product-info sp-info-area">
+                            <div class="product-name"><h1>@Model.DetailsOfProduct.ProductName</h1></div>
+
+                            <div class="product-rating">
+                                <p class="in-stock">
+                                    @if (Model.DetailsOfProduct.Stock > 0)
+                                    {
+                                        <span>IN STOCK: @Model.DetailsOfProduct.Stock</span>
+                                    }
+                                    else
+                                    {
+                                        <span style="background-color:red; color:wheat;"><b>OUT OF STOCK</b></span>
+                                    }
+
+                                </p>
+                            </div>
+
+                            <div class="all-prices">
+                                <span class="sp-price main-price">@Model.DetailsOfProduct.UnitPrice</span>
+                            </div>
+
+                            <div class="product-short-description">
+                                @Model.DetailsOfProduct.Notes
+                            </div>
+
+                            <div class="product-quantity">
+                                <div class="s-poraduct-botton">
+                                    <div class="submit_crt">
+                                        <a href="/Home/CartProcess/@Model.DetailsOfProduct.ProductID">
+                                            <input type="submit" name="name" value="Add to Cart" style="color:white; font-weight:bold; border-radius:30px;" class="update_cart" />
+                                        </a>
+                                        <a href="/Home/AddToFavourites/@Model.DetailsOfProduct.ProductID">
+                                            <input type="submit" name="name" value="Add to Favourites" style="color:white; font-weight:bold; border-radius:30px;" class="update_cart" />
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="reviews-areas">
+                            <div class="reviw-title">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="single-product.html#description">Full Description</a></li>
+                                    <li><a data-toggle="tab" href="single-product.html#infomation">Product Infomation</a></li>
+                                </ul>
+                            </div>
+                            <div class="revew-content-area">
+                                <div class="tab-content">
+                                    <div id="description" class="tab-pane fade in active">
+                                        <p>This product has %@Model.DetailsOfProduct.Discount discount rate.</p>
+                                        <p>@Model.DetailsOfProduct.Keywords</p>
+                                        <p>This product has %@Model.DetailsOfProduct.Kdv KDV tax.</p>
+                                        <p>Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.</p>
+                                    </div>
+                                    <div id="infomation" class="tab-pane fade">
+                                        <div class="product-infomation">
+                                            <ul class="list-info">
+                                                <li><strong>@Html.DisplayNameFor(model=>model.DetailsOfProduct.Discount)</strong>%@Model.DetailsOfProduct.Discount</li>
+                                                <li><strong>@Html.DisplayNameFor(model=>model.DetailsOfProduct.Kdv)</strong>@Model.DetailsOfProduct.Kdv</li>
+                                                <li><strong>@Html.DisplayNameFor(model=>model.DetailsOfProduct.Keywords)</strong>%@Model.DetailsOfProduct.Keywords</li>
+                                                <li><strong>@Html.DisplayNameFor(model=>model.DetailsOfProduct.AddDate)</strong>@Model.DetailsOfProduct.AddDate</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rp-area">
+                            <div class="mobile-products-area">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
+                                            <h3 class="sp-module-title">
+                                                <span>RELATED PRODUCTS</span>
+                                            </h3>
+                                        </div>
+                                        <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
+                                            <div class="row">
+                                                <div class="all-new-p">
+                                                    <div class="mobile-p-slides singal-p">
+                                                        @foreach (var item in Model.RelatedProducts)
+                                                        {
+                                                            <!-- SP-SINGLE Product -->
+                                                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                                                <div class="sp-single">
+                                                                    <div class="sp-img-area">
+                                                                        <img class="first-img" src="~/img/@item.PhotoPath" alt="" style="height:200px;" />
+                                                                        <img class="hover-img" src="~/img/@item.PhotoPath" alt="" style="height:200px;" />
+                                                                        <div class="quick-view-detail">
+                                                                            <a href="/Home/ProductDetails/@item.ProductID">View Details</a>
+                                                                        </div>                                                                        
+                                                                    </div>
+                                                                    <div class="sp-info-area">
+                                                                        <h2 class="product-name"><a title="@item.ProductName" href="/Home/ProductDetails/@item.ProductID">@item.ProductName</a></h2>
+                                                                        <p class="all-prices">
+                                                                            <span class="sp-price main-price">@item.UnitPrice</span>
+                                                                        </p>
+                                                                        <div class="sp-button">
+                                                                            <div class="s-button">
+                                                                                <a href="/Home/CartProcess/@item.ProductID" data-toggle="tooltip" data-placement="top" title="Add to Cart" class="black-tooltip add-to-cart all_src_icon"> <i class="fa fa-shopping-cart"></i> </a>
+                                                                            </div>
+                                                                            <div class="s-button">
+                                                                                <a href="index.html#" data-toggle="tooltip" data-placement="top" title="Add to Favorites" class="black-tooltip add-to-cart all_src_icon"> <i class="fa fa-heart-o"></i> </a>
+                                                                            </div>
+                                                                            <div class="s-button last-b ">
+                                                                                <a href="/Home/ProductDetails/@item.ProductID" data-toggle="tooltip" data-placement="top" title="View Detailss" class="black-tooltip add-to-cart all_src_icon"> <i class="fa fa-eye"></i> </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Single product area End  -->

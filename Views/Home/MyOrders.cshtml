@@ -1,0 +1,61 @@
+﻿@model List<vw_MyOrders>
+
+@{
+    ViewData["Title"] = "MyOrders";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<div class="wishlist-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                <div class="continue-link">
+                    <a href="cart.html#">Continue Shopping</a>
+                </div>
+                <div class="cart-wrapper table-responsive">
+                    <table class="shop_table cart ">
+                        <thead>
+                            <tr>
+                                <th class="product-price">Order No</th>
+                                <th colspan="2" class="product-name">Product Name</th>
+                                <th class="product-price">Order Date</th>
+                                <th class="product-price">Count</th>
+                                <th class="product-price">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="cart_item">
+                                    <td class="product-name">
+                                        <a>@item.OrderGroupGUID</a>
+                                    </td>
+
+                                    <td class="product-thumbnail">
+                                        <a href="/Home/ProductDetails/@item.ProductID"><img width="114" height="130" alt="04" class="attachment-shop_thumbnail wp-post-image" src="~/img/@item.PhotoPath"></a>
+                                    </td>
+
+                                    <td class="product-name">
+                                        <a href="/Home/ProductDetails/@item.ProductID">@item.ProductName</a>
+                                    </td>
+
+                                    <td class="product-name">
+                                        <a>@item.OrderDate</a>
+                                    </td>
+
+                                    <td class="product-name">
+                                        <a>@item.Quantity</a>
+                                    </td>
+
+                                    <td class="product-name">
+                                        <a>@item.UnitPrice</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

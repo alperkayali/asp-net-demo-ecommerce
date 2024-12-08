@@ -1,0 +1,105 @@
+﻿@model MainPageModel
+
+@{
+    ViewData["Title"] = "SpecialProducts";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+    KayaliContext context = new KayaliContext();
+    int totalProducts = context.Products.Count();
+}
+
+<!-- Single product area start  -->
+<div class="shop-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-9 col-lg-12">
+                <div class="back-to-category">
+                    Listed in:
+                    <a title="Special Products" class="product-details" href="/Home/SpecialProducts">Special Products</a>
+                </div>
+                <div class="clear"></div>
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="rp-area">
+                            <div class="all-p-title">
+                                <h3>SPECIAL Products</h3>
+                            </div>
+                            <div class="singl-shop ">
+                                <div class="row">
+                                    <div id="products">
+                                        @foreach (var item in Model.SpecialProducts)
+                                        {
+                                            <!-- SP-SINGLE Product -->
+                                            <div class="col-sm-6 col-md-3 col-lg-3">
+                                                <div class="sp-single">
+                                                    <div class="sp-img-area">
+                                                        <img alt="" src="~/img/@item.PhotoPath" class="first-img" style="height:200px;">
+                                                        <img alt="" src="~/img/@item.PhotoPath" class="hover-img" style="height:200px;">
+                                                        <div class="quick-view-detail">
+                                                            <a href="/Home/ProductDetails/@item.ProductID">View Detail</a>
+                                                        </div>
+                                                        <div class="sp-label-pro sp-label-pro">FAV</div>
+                                                    </div>
+                                                    <div class="sp-info-area">
+                                                        <h2 class="product-name"><a href="/Home/ProductDetails/@item.ProductID" title="@item.ProductName">@item.ProductName</a></h2>
+                                                        <p class="all-prices">
+                                                            <span class="sp-price main-price">@item.UnitPrice</span>
+                                                        </p>
+                                                        <div class="sp-button">
+                                                            <div class="s-button">
+                                                                <a class="black-tooltip add-to-cart all_src_icon" title="" data-placement="top" data-toggle="tooltip" href="/Home/CartProcess/@item.ProductID" data-original-title="add to cart"> <i class="fa fa-shopping-cart"></i> </a>
+                                                            </div>
+                                                            <div class="s-button">
+                                                                <a href="/Home/AddToFavourites/@item.ProductID" data-toggle="tooltip" data-placement="top" title="Add to Favorites" class="black-tooltip add-to-cart all_src_icon"> <i class="fa fa-heart-o"></i> </a>
+                                                            </div>
+                                                            <div class="s-button last-b ">
+                                                                <a class="black-tooltip add-to-cart all_src_icon" title="" data-placement="top" data-toggle="tooltip" href="/Home/ProductDetails/@item.ProductID" data-original-title="view detail"> <i class="fa fa-eye"></i> </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="loadmoreProducts">
+                <div class="s-poraduct-botton">
+                    <input type="submit" name="name" value="Load More Products" id="loadMoreButton" />
+                </div>
+            </div>
+            <input type="hidden" id="pagenumber" value="0" />
+        </div>
+    </div>
+</div>
+
+
+<!--Single product area End  -->
+<script>
+    $(document).on("click", "#loadmoreProducts", function () {
+        var pagenumber = parseInt($("#pagenumber").val())
+        var nextpage = pagenumber + 1;
+
+        $.ajax({
+            type: "GET",
+            url: "/Home/_PartialNewProducts",
+            data: { pageno: nextpage },
+            async: true,
+            processData: true,
+            cache: true,
+            success: function (result) {
+                $("#products").append(result)
+                $("#pagenumber").val(+nextpage)
+
+                if ($("#products .sp-single").length === @totalProducts) {
+                    $("#loadMoreButton").val("You've listed all products.").click("disabled");
+                }
+            }
+        })
+    });
+</script>

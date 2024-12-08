@@ -1,0 +1,313 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AspNetCore_WebAPP_MVC_PROJE
+build_property.RootNamespace = AspNetCore_WebAPP_MVC_PROJE
+build_property.ProjectDir = G:\Drive'ım\ALPER\FULL STACK\.NET\repos\AspNetCore_WebAPP_MVC_PROJE\AspNetCore_WebAPP_MVC_PROJE\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = G:\Drive'ım\ALPER\FULL STACK\.NET\repos\AspNetCore_WebAPP_MVC_PROJE\AspNetCore_WebAPP_MVC_PROJE
+build_property._RazorSourceGeneratorDebug = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/CategoryCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/CategoryDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/CategoryDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/CategoryEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/CategoryIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/ContentCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ29udGVudENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/ContentDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ29udGVudERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/ContentEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ29udGVudEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/ContentIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ29udGVudEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/GeneralIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2VuZXJhbEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/ProductCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/ProductDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/ProductDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/ProductEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/ProductIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/SettingCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZ0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/SettingDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZ0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/SettingEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZ0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/SettingsIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZ3NJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/StatusCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/StatusDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/StatusDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/StatusEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/StatusIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/SupplierCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/SupplierDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/SupplierDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/SupplierEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Admin/SupplierIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/AlperKayali/IndexKYL.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxwZXJLYXlhbGlcSW5kZXhLWUwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Footer/InformationSecurityPolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEluZm9ybWF0aW9uU2VjdXJpdHlQb2xpY3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Footer/OccupationalSafetyPolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXE9jY3VwYXRpb25hbFNhZmV0eVBvbGljeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/CategoryPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yeVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/ContactUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0VXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/DetailedSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxlZFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/DetSearchedProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRTZWFyY2hlZFByb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/DiscountProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEaXNjb3VudFByb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/Favourites.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGYXZvdXJpdGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/GetProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/HighlightedProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIaWdobGlnaHRlZFByb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/MyOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeU9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/NewProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXdQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/PayConclusion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXlDb25jbHVzaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/ProductDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/SpecialProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTcGVjaWFsUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/SupplierPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdXBwbGllclBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/TopSellerProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUb3BTZWxsZXJQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/UserInfoUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VySW5mb1VwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/_PartialDiscountProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGFydGlhbERpc2NvdW50UHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/_PartialHighlightedProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGFydGlhbEhpZ2hsaWdodGVkUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/_PartialNewProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGFydGlhbE5ld1Byb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Home/_PartialSpecialProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGFydGlhbFNwZWNpYWxQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/Components/Address/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRkcmVzc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/Components/Currency/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ3VycmVuY3lcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/Components/Email/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRW1haWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/Components/Footers/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/Components/Menus/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudXNcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/Components/Telephone/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGVsZXBob25lXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/Components/Weather/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcV2VhdGhlclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/DefaultLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERlZmF1bHRMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/WebAPI/ArtAndCulture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViQVBJXEFydEFuZEN1bHR1cmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/WebAPI/Pharmacies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViQVBJXFBoYXJtYWNpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Drive'ım/ALPER/FULL STACK/.NET/repos/AspNetCore_WebAPP_MVC_PROJE/AspNetCore_WebAPP_MVC_PROJE/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Pharmacy>
+@{
+    ViewData["Title"] = "Pharmacies";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+    int count = 0;
+}
+
+<div class="container">
+
+    <input type="text" id="txt_search" name="name" placeholder="Eczane arayın" />
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model=>model.Tarih)</th>
+                <th scope="col">@Html.DisplayNameFor(model=>model.LokasyonY)</th>
+                <th scope="col">@Html.DisplayNameFor(model=>model.LokasyonX)</th>
+                <th scope="col">@Html.DisplayNameFor(model=>model.Adi)</th>
+                <th scope="col">@Html.DisplayNameFor(model=>model.Telefon)</th>
+                <th scope="col">@Html.DisplayNameFor(model=>model.Adres)</th>
+            </tr>
+        </thead>
+        <tbody id="table_pharmacy">
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <td>@item.Tarih</td>
+                    <td>@item.LokasyonY</td>
+                    <td>@item.LokasyonX</td>
+                    <td>@item.Adi</td>
+                    <td>@item.Telefon</td>
+                    <td>@item.Adres</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <span style="background-color:lightgoldenrodyellow; color:darkgreen; font-size:24px;">Toplam @count adet nöbetçi eczane listeleniyor.</span>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#txt_search").on("keyup", function () {
+            var value = $(this).val().toLowerCase();            
+            $("#table_pharmacy tr").filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            })
+        })
+    })
+</script>

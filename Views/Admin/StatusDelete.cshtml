@@ -1,0 +1,70 @@
+﻿@model Status
+@{
+    ViewData["Title"] = "StatusDelete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+    @if (Model.Active == true)
+    {
+        <h3>Are you sure you want to <b>DEACTIVATE</b> this Status ?</h3>
+        <br />
+        <table class="table table-bordered table-striped table-condensed flip-content">
+            <tbody>
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.StatusID)</b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model=>model.StatusID)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.StatusName)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.StatusName)</td>
+                </tr>
+               
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Active)</b>
+                    </td>
+
+                    @if (Model.Active == true)
+                    {
+                        <td class="is-active">
+                            @Html.DisplayFor(model=>model.Active)
+                        </td>
+                    }
+
+                    else
+                    {
+                        <td class="is-inactive">
+                            @Html.DisplayFor(model=>model.Active)
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>
+            <form asp-action="StatusDelete" method="post">
+                <input type="hidden" asp-for="StatusID" />
+                <input type="submit" value="DEACTIVATE" class="btn btn-danger" />
+                <a asp-action="StatusIndex" class="btn blue">STATUSES TABLE</a>
+            </form>
+        </div>
+
+    }
+    else
+    {
+        <div>
+            <h4>The Status named <q>@Model.StatusName</q> has already been marked as DEACTIVATED. To make changes, you can use Status EDIT page.</h4>
+            <br>
+            <a asp-action="StatusEdit" asp-route-id="@Model.StatusID" class="btn yellow">EDİT</a>
+            <a asp-action="StatusIndex" class="btn blue">STATUSES TABLE</a>
+        </div>
+    }
+</div>

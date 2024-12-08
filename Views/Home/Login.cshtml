@@ -1,0 +1,58 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<!-- Loging area Start  -->
+<div class="loging-areas">
+    <div class="container">
+        <div class="row">            
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="login-users">
+                    <form action="@Url.Action("Login","Home")" method="post" id="com-form-login">
+                        <fieldset class="userdata content">
+                            <h2 class="proopc-process-title" style="font-weight:bold;">LOGIN</h2>
+                            <p>If you are already registered, please login directly here:</p>
+                            <ul class="form-list">
+                                <li>
+                                    <label class="required" asp-for="Email"></label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <input type="text" placeholder="login@user.com" asp-for="Email" class="inputbox" maxlength="100" required>
+                                    </div>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="Password"></label>
+                                    <div class="input-box" id="com-form-login-password">
+                                        <input type="password" placeholder="user" asp-for="Password" class="inputbox" id="modlgn-passwd" maxlength="100" required>
+                                    </div>
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <div class="buttons-set">
+                            <input type="submit" value="Login" class="vina-button" name="Submit">
+                            <a href="login.html#">Forgot your password ?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="new-users">
+                    <div class="content">
+                        <h2 class="proopc-process-title" style="font-weight:bold;">Create an New Account</h2>
+                        <p>By creating an account on our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                    </div>
+                    <div class="buttons-set">
+                        <a href="/Home/Register" title="Create new account">
+                            <input type="button" class="vina-button" value="REGISTER">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Loging area area End  -->

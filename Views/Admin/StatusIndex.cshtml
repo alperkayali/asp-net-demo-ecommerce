@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Status>
+@{
+    ViewData["Title"] = "StatusIndex";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <!-- BEGIN STATUSES TABLE-->
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-comments"></i>General View of <b>Statuses</b>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-striped table-hover" style="cursor:pointer;">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.StatusID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.StatusName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.Active)
+                                </th>
+                                <th style="text-align:center">
+                                    CRUD
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    @if (item.Active == true)
+                                    {
+                                        <td>@Html.DisplayFor(model=>item.StatusID)</td>
+                                        <td>@Html.DisplayFor(model=>item.StatusName)</td>
+
+                                        <td class="@(item.Active ? "is-active" : "is-inactive")">@Html.DisplayFor(modelItem=>item.Active)</td>
+                                        <td>
+                                            <a asp-action="StatusDetails" asp-route-id="@item.StatusID" class="btn btn-info">DETAİLS</a>
+                                            <a asp-action="StatusEdit" asp-route-id="@item.StatusID" class="btn btn-primary">EDİT</a>
+                                            <a asp-action="StatusDelete" asp-route-id="@item.StatusID" class="btn btn-danger">DEACTIVATE</a>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>@Html.DisplayFor(model=>item.StatusID)</td>
+                                        <td>@Html.DisplayFor(model=>item.StatusName)</td>
+                                        <td class="@(item.Active ? "is-active" : "is-inactive")">@Html.DisplayFor(modelItem=>item.Active)</td>
+                                        <td>
+                                            <a asp-action="StatusDetails" asp-route-id="@item.StatusID" class="btn btn-info">DETAİLS</a>
+                                            <a asp-action="StatusEdit" asp-route-id="@item.StatusID" class="btn btn-primary">EDİT</a>
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END STATUSES TABLE-->
+        <p>
+            <a asp-action="StatusCreate" asp-controller="Admin" class="btn btn-success">CREATE NEW STATUS</a>
+        </p>
+    </div>
+</div>

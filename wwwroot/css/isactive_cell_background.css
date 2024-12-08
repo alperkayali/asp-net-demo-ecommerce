@@ -1,0 +1,7 @@
+﻿.is-active {
+    background: linear-gradient(to right, #157739, #2C8F52, #6AB679);
+}
+
+.is-inactive {
+    background: linear-gradient(to right, darkred, #ff6347, #ff7f50);
+}

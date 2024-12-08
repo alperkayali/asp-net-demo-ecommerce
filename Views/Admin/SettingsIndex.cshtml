@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Setting>
+@{
+    ViewData["Title"] = "SettingsIndex";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-9">
+        <!-- BEGIN STATUSES TABLE-->
+        <div class="portlet box purple">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-comments"></i>General View of <b>Settings</b>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-striped table-hover" style="cursor:pointer;">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.SettingID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.telephone)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.adress)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.mainpageCount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.subpageCount)
+                                </th>
+                                <th style="text-align:center">
+                                    CRUD
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.SettingID</td>
+                                    <td>@item.telephone</td>
+                                    <td>@item.email</td>
+                                    <td>@item.adress</td>
+                                    <td>@item.mainpageCount</td>
+                                    <td>@item.subpageCount</td>
+                                    <td>
+                                        <a asp-action="SettingDetails" asp-route-id="@item.SettingID" class="btn btn-info">DETAİLS</a>
+                                        <a asp-action="SettingEdit" asp-route-id="@item.SettingID" class="btn btn-primary">EDİT</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END STATUSES TABLE-->
+        <p>
+            <a asp-action="SettingCreate" asp-controller="Admin" class="btn btn-success">CREATE NEW SETTING</a>
+        </p>
+    </div>
+</div>
+

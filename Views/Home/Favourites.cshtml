@@ -1,0 +1,66 @@
+﻿@model List<Favourite>
+@{
+    ViewData["Title"] = "Favourites";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<!-- cart area start  -->
+<div class="wishlist-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                @if (Model != null)
+                {
+                    <div class="cart-wrapper table-responsive">
+                        <table class="shop_table cart ">
+                            <thead>
+                                <tr>
+                                    <th colspan="3" class="product-subtotal">Product</th>
+                                    <th class="product-subtotal">PRICE</th>
+                                    <th class="product-subtotal">KDV</th>
+                                    <th class="product-subtotal">STOCK</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="cart_item" style="height:80px;">
+                                        <td class="remove-product">
+                                            <a title="Remove this Product" class="remove" href="/Home/RemoveFromFavourites/@item.ProductID"><span class="icon-close"></span></a>
+                                        </td>
+
+                                        <td class="product-thumbnail">
+                                            <a href="/Home/ProductDetails/@item.ProductID"><img width="114" height="130" alt="04" class="attachment-shop_thumbnail wp-post-image" src="~/img/@item.PhotoPath"></a>
+                                        </td>
+
+                                        <td class="product-name">
+                                            <a href="/Home/ProductDetails/@item.ProductID">@item.ProductName</a>
+                                        </td>
+
+                                        <td class="product-quantity">
+                                            <div class="quantity">@item.UnitPrice</div>
+                                        </td>
+
+                                        <td class="product-price">
+                                            <span class="amount">%@item.KDV</span>
+                                        </td>
+
+                                        <td class="product-price">
+                                            <span class="amount">(@item.Stock left)</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <br />
+                    <h1 style="text-align:center; color:#f47e1e; font-family:Calibri; font-size:36px; font-weight:bold;">Your Favourites List is now empty.  <a href="/Home/Index" style="color:#f47e1e;">Click here to continue shopping</a></h1>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- cart area end  -->

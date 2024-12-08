@@ -1,0 +1,35 @@
+﻿@model MainPageModel
+
+@foreach (var item in Model.HighlightedProducts)
+{
+    <!-- SP-SINGLE Product -->
+    <div class="col-sm-6 col-md-3 col-lg-3">
+        <div class="sp-single">
+            <div class="sp-img-area">
+                <img alt="" src="~/img/@item.PhotoPath" class="first-img" style="height:200px;">
+                <img alt="" src="~/img/@item.PhotoPath" class="hover-img" style="height:200px;">
+                <div class="quick-view-detail">
+                    <a href="/Home/ProductDetails/@item.ProductID">View Details</a>
+                </div>
+                <div class="sp-label-pro sp-label-pro">H @item.HighLighted</div>
+            </div>
+            <div class="sp-info-area">
+                <h2 class="product-name"><a href="/Home/ProductDetails/@item.ProductID" title="@item.ProductName">@item.ProductName</a></h2>
+                <p class="all-prices">
+                    <span class="sp-price main-price">@item.UnitPrice</span>
+                </p>
+                <div class="sp-button">
+                    <div class="s-button">
+                        <a class="black-tooltip add-to-cart all_src_icon" title="" data-placement="top" data-toggle="tooltip" href="/Home/CartProcess/@item.ProductID" data-original-title="add to cart"> <i class="fa fa-shopping-cart"></i> </a>
+                    </div>
+                    <div class="s-button">
+                        <a class="black-tooltip add-to-cart all_src_icon" title="" data-placement="top" data-toggle="tooltip" href="single-product.html#" data-original-title="add favorite"> <i class="fa fa-heart-o"></i> </a>
+                    </div>
+                    <div class="s-button last-b ">
+                        <a class="black-tooltip add-to-cart all_src_icon" title="" data-placement="top" data-toggle="tooltip" href="/Home/ProductDetails/@item.ProductID" data-original-title="view detail"> <i class="fa fa-eye"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

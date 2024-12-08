@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "DetSearchedProducts";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<!-- Detailed Search Results area start  -->
+<div class="shop-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-9 col-lg-12">
+                <div class="back-to-category">
+                    Listed in:
+                    <a title="Detailed Search Results" class="product-details" href="/Home/DetailedSearch">Detailed Search Results</a>
+                </div>
+                <div class="clear"></div>
+                <div class="row">
+
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="rp-area">
+                            <div class="all-p-title">
+                                <h3>Detailed Search Results</h3>
+                            </div>
+                            <div class="singl-shop ">
+                                <div class="row">
+                                    <div>
+                                        @foreach (var item in ViewBag.Products)
+                                        {
+                                            <!-- SP-SINGLE Product -->
+                                            <div class="col-sm-6 col-md-3 col-lg-3">
+                                                <div class="sp-single">
+                                                    <div class="sp-img-area">
+                                                        <img alt="" src="~/img/@item.PhotoPath" class="first-img" style="height:200px;">
+                                                        <img alt="" src="~/img/@item.PhotoPath" class="hover-img" style="height:200px;">
+                                                        <div class="quick-view-detail">
+                                                            <a href="single-product.html#">View Detail</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sp-info-area">
+                                                        <h2 class="product-name"><a href="/Home/ProductDetails/@item.ProductID" title="@item.ProductName">@item.ProductName</a></h2>
+                                                        <p class="all-prices">
+                                                            <span class="sp-price main-price">@item.UnitPrice</span>
+                                                        </p>
+                                                        <div class="sp-button">
+                                                            <div class="s-button">
+                                                                <a class="black-tooltip add-to-cart all_src_icon" title="" data-placement="top" data-toggle="tooltip" href="/Home/CartProcess/@item.ProductID" data-original-title="add to cart"> <i class="fa fa-shopping-cart"></i> </a>
+                                                            </div>
+                                                            <div class="s-button">
+                                                                <a class="black-tooltip add-to-cart all_src_icon" title="" data-placement="top" data-toggle="tooltip" href="single-product.html#" data-original-title="add favorite"> <i class="fa fa-heart-o"></i> </a>
+                                                            </div>
+                                                            <div class="s-button last-b ">
+                                                                <a class="black-tooltip add-to-cart all_src_icon" title="" data-placement="top" data-toggle="tooltip" href="/Home/ProductDetails/@item.ProductID" data-original-title="view detail"> <i class="fa fa-eye"></i> </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Detailed Search Results End  -->

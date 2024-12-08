@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ArtAndCulture>
+@{
+    ViewData["Title"] = "ArtAndCulture";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<div class="col-sm-2 col-md-2 col-lg2"></div>
+<div class="col-sm-8 col-md-8 col-lg8">
+    <div class="container">
+        <input type="text" id="txt_search" name="name" placeholder="Etkinlik arayın" />
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.KucukAfis)</th>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.Tur)</th>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.Adi)</th>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.EtkinlikMerkezi)</th>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.EtkinlikBaslamaTarihi)</th>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.EtkinlikBitisTarihi)</th>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.KisaAciklama)</th>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.UcretsizMi)</th>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.BiletSatisLinki)</th>
+                    <th scope="col">@Html.DisplayNameFor(model=>model.EtkinlikUrl)</th>
+                </tr>
+            </thead>
+            <tbody id="table_etkinlik">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td><img src="@item.KucukAfis" /></td>
+                        <td>@item.Tur</td>
+                        <td>@item.Adi</td>
+                        <td>@item.EtkinlikMerkezi</td>
+                        <td>@item.EtkinlikBaslamaTarihi</td>
+                        <td>@item.EtkinlikBitisTarihi</td>
+                        <td>@item.KisaAciklama.Replace("<br>","")</td>
+                        <td>@item.UcretsizMi</td>
+                        @if (item.BiletSatisLinki != null)
+                        {
+                            <td><a href="@item.BiletSatisLinki" target="_blank" class="btn btn-success">Bilet Al</a></td>
+                        }
+                        else
+                        {
+                            <td>Aktif satış yoktur.</td>
+                        }
+                        <td><a href="https://kultursanat.izmir.bel.tr/Etkinlikler/@item.EtkinlikUrl">Etkinlik Sayfası</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-sm-2 col-md-2 col-lg2"></div>
+
+<script>
+    $(document).ready(function () {
+        $("#txt_search").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#table_etkinlik tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            })
+        })
+    })
+</script>

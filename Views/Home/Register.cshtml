@@ -1,0 +1,71 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<!-- Register area Start  -->
+<div class="loging-areas">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-2 col-lg-2">
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <div class="login-users">
+                    <form action="@Url.Action("Register","Home")" method="post" id="com-form-login">
+                        <fieldset class="userdata content">
+                            <h2 class="proopc-process-title" style="font-weight:bold;">Registration</h2>
+                            <ul class="form-list">
+
+                                <li>
+                                    <label class="required" asp-for="NameSurname">Name and Surname:</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <input type="text" placeholder="Name Surname" asp-for="NameSurname" class="inputbox" maxlength="100" required>
+                                    </div>
+                                    <span asp-validation-for="NameSurname" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="Email">E-Mail:</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <input type="text" placeholder="admin@template.com" asp-for="Email" class="inputbox" maxlength="100" required>
+                                    </div>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="Password">Password:</label>
+                                    <div class="input-box" id="com-form-login-password">
+                                        <input type="password" asp-for="Password" class="inputbox" id="modlgn-passwd" maxlength="100" required>
+                                    </div>
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="Telephone">Phone Number:</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <input type="text" placeholder="Phone Number" asp-for="Telephone" class="inputbox" maxlength="13" value="+90" required>
+                                    </div>
+                                    <span asp-validation-for="Telephone" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="InvoicesAdress">Invoice Adress:</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <textarea typeof="text" asp-for="InvoicesAdress" placeholder="Invoice Adress" class="input-box" rows="5" cols="95" required>
+                                    </textarea>
+                                    </div>                                    
+                                </li>
+                            </ul>                            
+                        </fieldset>
+                        <div class="buttons-set">
+                            <input type="submit" value="SIGN UP" class="vina-button" name="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Register area area End  -->

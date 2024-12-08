@@ -1,0 +1,58 @@
+﻿@model List<Supplier>
+@{
+    ViewData["Title"] = "SupplierCreate";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <!-- BEGIN CATEGORY CREATE FORM-->
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="portlet box purple ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Supplier <b>Creation</b> Form
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                    <a href="" class="reload">
+                    </a>
+                    <a href="" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" action="/Admin/SupplierCreate" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Type a new Supplier Title:</label>
+                            <div class="col-md-9">
+                                <input type="text" name="BrandName" class="form-control input-lg" placeholder="Name of the Supplier" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Photopath:</label>
+                            <div class="col-md-9">
+                                <input type="file" name="PhotoPath" class="form-control input-lg"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Active Supplier:</label>
+                            <div class="col-md-9">
+                                <input type="checkbox" name="Active" value="true" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions right1">
+                        <input type="submit" value="ADD" class="btn green" />
+                        <a asp-action="SupplierIndex" class="btn blue">Suppliers Table</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END SUPPLIER CREATE FORM-->    
+</div>

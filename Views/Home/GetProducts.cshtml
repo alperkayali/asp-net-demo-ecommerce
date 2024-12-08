@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Search>
+
+@{
+    int ikat = 0;
+    int imar = 0;
+    int iurun = 0;
+}
+
+<ul>
+
+    @foreach (var item in Model)
+    {
+        if (item.CATEGORY != 0)
+        {
+            if (ikat == 0)
+            {
+                <li><b>CATEGORIES</b></li>
+                <br />
+                ikat++;
+            }
+            <li>
+                <a href="/Home/CategoryPage/@item.CATEGORY" class="baby">
+                <span class="catTitle">@item.SEARCHNAME</span>    
+                </a>
+            </li>
+        }
+
+        if (item.BRAND != 0)
+        {
+            if (imar == 0)
+            {
+                <li><hr /></li>
+                <li><b>BRANDS</b></li>
+                imar++;
+            }
+            <li>
+                <a href="/Home/SupplierPage/@item.BRAND" class="baby">
+                    <span class="catTitle">@item.SEARCHNAME</span>
+                </a>
+            </li>
+        }
+
+        if (item.PRODUCT != 0)
+        {
+            if (iurun == 0)
+            {
+                <li><hr /></li>
+                <li><b>PRODUCTS</b></li>
+                iurun++;
+            }
+            <li>
+                <a href="/Home/ProductDetails/@item.PRODUCT" class="baby">
+                    <span class="catTitle">@item.SEARCHNAME</span>
+                </a>
+            </li>
+        }
+
+    }
+</ul>

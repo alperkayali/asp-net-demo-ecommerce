@@ -1,0 +1,78 @@
+﻿@model Content
+@{
+    ViewData["Title"] = "ContentDelete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+    @if (Model.Active == true)
+    {
+        <h3>Are you sure you want to <b>DEACTIVATE</b> this Content ?</h3>
+        <br />
+        <table class="table table-bordered table-striped table-condensed flip-content">
+            <tbody>
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.ContentID)</b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model=>model.ContentID)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.ContentName)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.ContentName)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.ContentInfo)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.ContentInfo)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Active)</b>
+                    </td>
+
+                    @if (Model.Active == true)
+                    {
+                        <td class="is-active">
+                            @Html.DisplayFor(model=>model.Active)
+                        </td>
+                    }
+
+                    else
+                    {
+                        <td class="is-inactive">
+                            @Html.DisplayFor(model=>model.Active)
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>
+            <form asp-action="ContentDelete" method="post">
+                <input type="hidden" asp-for="ContentID" />
+                <input type="submit" value="DEACTIVATE" class="btn btn-danger" />
+                <a asp-action="ContentIndex" class="btn blue">CONTENTS TABLE</a>
+            </form>
+        </div>
+
+    }
+    else
+    {
+        <div>
+            <h4>The Content named <q>@Model.ContentName</q> has already been marked as DEACTIVATED. To make changes, you can use CONTENT EDIT page.</h4>
+            <br>
+            <a asp-action="ContentEdit" asp-route-id="@Model.ContentID" class="btn yellow">EDİT</a>
+            <a asp-action="ContentIndex" class="btn blue">CONTENTS TABLE</a>
+        </div>
+    }
+</div>
+

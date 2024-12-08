@@ -1,0 +1,77 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "DeleteCategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-6">
+    @if (Model.Active == true)
+    {
+        <h3>Are you sure you want to <b>DEACTIVATE</b> this Category ?</h3>
+        <br />
+        <table class="table table-bordered table-striped table-condensed flip-content">
+            <tbody>
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.ParentID)</b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model=>model.ParentID)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.CategoryID)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.CategoryID)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.CategoryName)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.CategoryName)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Active)</b>
+                    </td>
+
+                    @if (Model.Active == true)
+                    {
+                        <td class="is-active">
+                            @Html.DisplayFor(model=>model.Active)
+                        </td>
+                    }
+
+                    else
+                    {
+                        <td class="is-inactive">
+                            @Html.DisplayFor(model=>model.Active)
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>
+            <form asp-action="CategoryDelete" method="post">
+                <input type="hidden" asp-for="CategoryID" />
+                <input type="submit" value="DEACTIVATE" class="btn btn-danger" />
+                <a asp-action="CategoryIndex" class="btn blue">CATEGORIES TABLE</a>
+            </form>
+        </div>
+
+    }
+    else
+    {
+        <div>
+            <h4>The Category named <q>@Model.CategoryName</q> has already been marked as DEACTIVATED. To make changes, you can use Category EDIT page.</h4>
+            <br>
+            <a asp-action="CategoryEdit" asp-route-id="@Model.CategoryID" class="btn yellow">EDİT</a>
+            <a asp-action="CategoryIndex" class="btn blue">CATEGORIES TABLE</a>
+        </div>
+    }
+</div>

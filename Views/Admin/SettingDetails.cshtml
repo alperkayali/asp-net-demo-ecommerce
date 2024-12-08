@@ -1,0 +1,87 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "SettingDetails";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <!-- BEGIN SETTING TABLE-->
+        <div class="portlet box green">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs"></i>Detailed information about Setting <b>ID = @Model.SettingID;</b>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body flip-scroll">
+                <table class="table table-bordered table-striped table-condensed flip-content">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <b>@Html.DisplayNameFor(s=>s.SettingID)</b>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(s=>s.SettingID)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <b>@Html.DisplayNameFor(s=>s.telephone)</b>
+                            </td>
+                            <td>@Html.DisplayFor(s=>s.telephone)</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <b>@Html.DisplayNameFor(s=>s.email)</b>
+                            </td>
+                            <td>@Html.DisplayFor(s=>s.email)</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <b>@Html.DisplayNameFor(s=>s.adress)</b>
+                            </td>
+                            <td>@Html.DisplayFor(s=>s.adress)</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <b>@Html.DisplayNameFor(s=>s.mainpageCount)</b>
+                            </td>
+                            <td>@Html.DisplayFor(s=>s.mainpageCount)</td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <b>@Html.DisplayNameFor(s=>s.subpageCount)</b>
+                            </td>
+                            <td>@Html.DisplayFor(s=>s.subpageCount)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END SUPPLIER TABLE-->
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <input type="hidden" asp-for="SettingID" />
+
+        <a asp-action="SettingEdit" asp-route-id="@Model.SettingID" class="btn btn-primary">EDİT</a>
+        <a asp-action="SettingsIndex" class="btn blue">SETTINGS TABLE</a>
+    </div>
+</div>
+
+

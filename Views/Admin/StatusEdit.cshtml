@@ -1,0 +1,52 @@
+﻿@model Status
+@{
+    ViewData["Title"] = "StatusEdit";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-sm-12 col-md-4 col-lg-5 col-xl-6">
+    <div class="portlet box green ">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i> Status <b>Edit</b> Form
+            </div>
+            <div class="tools">
+                <a href="" class="collapse">
+                </a>
+                <a href="#portlet-config" data-toggle="modal" class="config">
+                </a>
+                <a href="" class="reload">
+                </a>
+                <a href="" class="remove">
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form class="form-horizontal" role="form" action="/Admin/StatusEdit" method="post">
+                <div class="form-body">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Type a new Status Title:</label>
+                        <div class="col-md-9">
+                            <input type="text" name="StatusName" class="form-control input-lg" value="@Model.StatusName" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Active Status </label>
+                        <div class="col-md-9">
+                            <input type="checkbox" name="Active" value="true" />
+                        </div>
+                    </div>
+
+                    <input type="hidden" asp-for="StatusID" />
+
+                </div>
+                <div class="form-actions right1">
+                    <input type="submit" value="UPDATE" class="btn green" />
+                    <a asp-action="StatusIndex" class="btn blue">Statuses Table</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

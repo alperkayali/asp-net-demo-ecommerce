@@ -1,0 +1,170 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "ProductDelete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+    @if (Model.Active == true)
+    {
+        <h3>Are you sure you want to <b>DEACTIVATE</b> this Product ?</h3>
+        <br />
+        <table class="table table-bordered table-striped table-condensed flip-content">
+            <tbody>
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.ProductID)</b>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model=>model.ProductID)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.CategoryID)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.CategoryID)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.SupplierID)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.SupplierID)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.StatusID)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.StatusID)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Active)</b>
+                    </td>
+
+                    @if (Model.Active == true)
+                    {
+                        <td class="is-active">
+                            @Html.DisplayFor(model=>model.Active)
+                        </td>
+                    }
+
+                    else
+                    {
+                        <td class="is-inactive">
+                            @Html.DisplayFor(model=>model.Active)
+                        </td>
+                    }
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.ProductName)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.ProductName)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.PhotoPath)</b>
+                    </td>
+                    <td><img src="~/img/@Model.PhotoPath" height="32" width="72"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.UnitPrice)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.UnitPrice)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Stock)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.Stock)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Discount)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.Discount)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.AddDate)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.AddDate)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Keywords)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.Keywords)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Kdv)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.Kdv)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.HighLighted)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.HighLighted)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.TopSeller)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.TopSeller)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Related)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.Related)</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>@Html.DisplayNameFor(model=>model.Notes)</b>
+                    </td>
+                    <td>@Html.DisplayFor(model=>model.Notes)</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <br />
+        <div>
+            <form asp-action="ProductDelete" method="post">
+                <input type="hidden" asp-for="ProductID" />
+                <input type="submit" value="DEACTIVATE" class="btn btn-danger" />
+                <a asp-action="ProductIndex" class="btn blue">PRODUCTS TABLE</a>
+            </form>
+        </div>
+
+    }
+    else
+    {
+        <div>
+            <h4>The Product named <q>@Model.ProductName</q> has already been marked as DEACTIVATED. To make changes, you can use Product EDIT page.</h4>
+            <br>
+            <a asp-action="ProductEdit" asp-route-id="@Model.ProductID" class="btn yellow">EDİT</a>
+            <a asp-action="ProductIndex" class="btn blue">PRODUCTS TABLE</a>
+        </div>
+    }
+</div>
+

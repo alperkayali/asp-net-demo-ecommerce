@@ -1,0 +1,151 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "ProductCreate";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!-- BEGIN PRODUCT CREATE FORM-->
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="portlet box yellow ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Product <b>Creation</b> Form
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                    <a href="" class="reload">
+                    </a>
+                    <a href="" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" action="/Admin/ProductCreate" method="post">
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Product Name:</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="ProductName" class="form-control input-lg" placeholder="Name of the Product" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Unit Price:</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="UnitPrice" class="form-control input-lg" placeholder="Price of the Product" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Category of the Product:</label>
+                                    <div class="col-md-9">
+                                        @Html.DropDownList("ParentID",(IEnumerable<SelectListItem>?)ViewData["CategoryList"],"MAIN",new { @class = "form-control input-lg"})
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Supplier of the Product:</label>
+                                    <div class="col-md-9">
+                                        @Html.DropDownList("SupplierID",(IEnumerable<SelectListItem>?)ViewData["SupplierList"],"Choose a Supplier",new { @class = "form-control input-lg"})
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Status of the Product:</label>
+                                    <div class="col-md-9">
+                                        @Html.DropDownList("StatusID",(IEnumerable<SelectListItem>?)ViewData["StatusList"],"Choose a Status",new { @class = "form-control input-lg"})
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Stock:</label>
+                                    <div class="col-md-9">
+                                        <input type="number" name="Stock" class="form-control input-lg" placeholder="Stock must be greater than 0" onkeypress="return numberonly(this,event);" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Date:</label>
+                                    <div class="col-md-9">
+                                        <input type="date" name="AddDate" class="form-control input-lg" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Keywords:</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="Keywords" class="form-control input-lg"/>
+                                    </div>
+                                </div>                               
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Discount Rate:</label>
+                                    <div class="col-md-9">
+                                        <input type="number" name="Discount" class="form-control input-lg" placeholder="Discount percentage" onkeypress="return numberonly(this,event);" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">KDV:</label>
+                                    <div class="col-md-9">
+                                        <input type="number" name="Kdv" class="form-control input-lg" placeholder="KDV percentage" onkeypress="return numberonly(this,event);" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Related Value:</label>
+                                    <div class="col-md-9">
+                                        <input type="number" name="Related" class="form-control input-lg" placeholder="Relating quantity" onkeypress="return numberonly(this,event);" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Notes:</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="Notes" class="form-control input-lg" placeholder="Any additional information"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Product Image:</label>
+                                    <div class="col-md-9">
+                                        <input type="file" name="PhotoPath" class="form-control input-lg" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Slider Image:</label>
+                                    <div class="col-md-9">
+                                        <input type="file" name="SliderPhotoPath" class="form-control input-lg" />
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Active Product </label>
+                                    <div class="col-md-9">
+                                        <input type="checkbox" name="Active" value="true" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="form-actions right1">
+                        <input type="submit" name="btn_kaydet" value="ADD" class="btn green" />
+                        <a asp-action="ProductIndex" class="btn blue">Products Table</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PRODUCT CREATE FORM-->

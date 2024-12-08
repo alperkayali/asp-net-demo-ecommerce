@@ -1,0 +1,75 @@
+﻿@model User
+@{
+    ViewData["Title"] = "UserInfoUpdate";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<!-- User Info Update area Start  -->
+<div class="loging-areas">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-2 col-lg-2">
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <div class="login-users">
+                    <form action="@Url.Action("UserInfoUpdate","Home")" method="post" id="com-form-login">
+                        <fieldset class="userdata content">
+                            <h2 class="proopc-process-title" style="font-weight:bold;">Update your information</h2>
+                            <ul class="form-list">
+
+                                <li>
+                                    <label class="required" asp-for="NameSurname">Name and Surname:</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <input type="text" value="@Model.NameSurname" asp-for="NameSurname" class="inputbox" maxlength="100">
+                                    </div>
+                                    <span asp-validation-for="NameSurname" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="Email">E-Mail:</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <input type="text" value="@Model.Email" asp-for="Email" class="inputbox" maxlength="100">
+                                    </div>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="Password">Password:</label>
+                                    <div class="input-box" id="com-form-login-password">
+                                        <input type="password" asp-for="Password" placeholder="Read the explanation below." class="inputbox" id="modlgn-passwd" maxlength="100">
+                                    </div>                                    
+                                        <span style="font-style:italic; font-size:12px; background-color:lightgoldenrodyellow;">
+                                            If you write a new password, it will be changed and saved. If you write your existing password, system will approve the changes with it.
+                                        </span> 
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="Telephone">Phone Number:</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <input type="text" value="@Model.Telephone" asp-for="Telephone" class="inputbox" maxlength="13" value="@Model.Telephone">
+                                    </div>
+                                    <span asp-validation-for="Telephone" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="InvoicesAdress">Invoice Adress:</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <textarea typeof="text" asp-for="InvoicesAdress" value="@Model.InvoicesAdress" class="input-box" rows="5" cols="95">
+                                    </textarea>
+                                    </div>
+                                </li>
+                            </ul>
+                            <input type="hidden" asp-for="UserID" />
+
+                        </fieldset>
+                        <div class="buttons-set">
+                            <input type="submit" value="UPDATE MY INFO" class="vina-button" name="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- User Info Update area Start  -->

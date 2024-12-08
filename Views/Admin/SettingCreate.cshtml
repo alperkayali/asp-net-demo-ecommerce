@@ -1,0 +1,73 @@
+﻿@model List<Setting>
+@{
+    ViewData["Title"] = "SettingCreate";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <!-- BEGIN SETTING CREATE FORM-->
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="portlet box purple ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Setting <b>Creation</b> Form
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                    <a href="" class="reload">
+                    </a>
+                    <a href="" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" action="/Admin/SettingCreate" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Type a Telephone Number:</label>
+                            <div class="col-md-9">
+                                <input type="text" name="telephone" class="form-control input-lg" placeholder="Phone Number" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Type an E-Mail adress:</label>
+                            <div class="col-md-9">
+                                <input type="email" name="email" class="form-control input-lg" placeholder="Mail Adress" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Type an Adress:</label>
+                            <div class="col-md-9">
+                                <input type="text" name="adress" class="form-control input-lg" placeholder="Adress" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Main Page Product Count:</label>
+                            <div class="col-md-9">
+                                <input type="number" min="1" name="mainpageCount" class="form-control input-lg" placeholder="Set a value"  required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Sub Page Product Count:</label>
+                            <div class="col-md-9">
+                                <input type="number" min="1" name="subpageCount" class="form-control input-lg" placeholder="Set a value" required />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions right1">
+                        <input type="submit" value="ADD" class="btn green" />
+                        <a asp-action="SettingsIndex" class="btn blue">Settings Table</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END SETTING CREATE FORM-->
+</div>
+

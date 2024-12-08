@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+
+<!-- cart area start  -->
+<div class="wishlist-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                @if (@ViewBag.MyCart != null)
+                {
+                    <div class="cart-wrapper table-responsive">
+                        <table class="shop_table cart ">
+                            <thead>
+                                <tr>
+                                    <th colspan="3" class="product-subtotal">Product Name</th>
+                                    <th class="product-subtotal">PRICE</th>
+                                    <th class="product-subtotal">KDV</th>
+                                    <th class="product-subtotal">QUANTITY</th>
+                                    <th class="product-subtotal">TOTAL PRICE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in ViewBag.MyCart as IList<cls_Order>)
+                                {
+                                    <tr class="cart_item" style="height:80px;">
+                                        <td class="remove-product">
+                                            <a title="Remove this Product" class="remove" href="@Url.Action("Cart", new {scid = item.ProductID})"><span class="icon-close"></span></a>
+                                        </td>
+
+                                        <td class="product-thumbnail">
+                                            <a href="/Home/ProductDetails/@item.ProductID"><img width="114" height="130" alt="04" class="attachment-shop_thumbnail wp-post-image" src="~/img/@item.PhotoPath"></a>
+                                        </td>
+
+                                        <td class="product-name">
+                                            <a href="/Home/ProductDetails/@item.ProductID">@item.ProductName</a>
+                                        </td>
+
+                                        <td class="product-quantity">
+                                            <div class="quantity">@item.UnitPrice</div>
+                                        </td>
+
+                                        <td class="product-price">
+                                            <span class="amount">@item.KDV</span>
+                                        </td>                                        
+
+                                        <td class="product-subtotal">
+                                            <span class="amount"><input type="number" size="2" class="input-text qty text" title="Qty" value="@item.Quantity" min="1" ;></span>
+                                        </td>
+
+                                        <td class="product-subtotal">
+                                            @{
+                                                decimal mainTotal = Math.Round((((item.KDV * item.UnitPrice) / 100) + item.UnitPrice) * item.Quantity, 2);
+                                            }
+                                            <span class="amount">
+                                                @mainTotal
+                                            </span>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-12 ">
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-12 ">
+                            <div class="cart_totals">
+                                <h2>Cart Summary</h2>
+                                <div class="total_table">
+                                    <table class="table-responsive">
+                                        <tbody>
+
+                                            @{
+                                                int count = 0;
+                                                int totalQuantity = 0;
+                                                decimal totalPrice = 0;
+                                                decimal lastTotal = 0;
+                                                decimal withoutKDV = 0;
+                                                decimal totalKDV = 0;
+
+                                                @foreach (var item in ViewBag.MyCart as IList<cls_Order>)
+                                                {
+                                                    totalQuantity += item.Quantity;
+                                                    totalPrice += item.UnitPrice;
+                                                    lastTotal += Math.Round((((item.KDV * item.UnitPrice) / 100) + item.UnitPrice) * item.Quantity, 2);
+                                                    withoutKDV += Math.Round((item.UnitPrice * item.Quantity), 2);
+                                                    count++;
+                                                }
+
+                                                totalKDV = lastTotal - withoutKDV;
+                                            }
+
+                                            <tr class="cart-subtotal">
+                                                <th>Total Items</th>
+                                                <td><span class="amount">@totalQuantity</span></td>
+                                            </tr>                                            
+
+                                            <tr class="cart-subtotal">
+                                                <th>Total Price</th>
+                                                <td><span class="amount">@withoutKDV</span></td>
+                                            </tr>
+
+                                            <tr class="cart-subtotal">
+                                                <th>+KDV</th>
+                                                <td><span class="amount">@totalKDV</span></td>
+                                            </tr>
+
+                                            <tr class="cart-subtotal">
+                                                <th>Total Price With KDV</th>
+                                                <td><span class="amount">@lastTotal</span></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <div class="submit_crt">
+
+                                        <a href="@Url.Action("Order","Home")" title="Proceed to Checkout">
+                                            <input type="button" class="update_cart" value="CHECKOUT" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <br />
+                    <h1 style="text-align:center; color:#f47e1e; font-family:Calibri; font-size:36px; font-weight:bold;">Your Shopping Cart is now empty.  <a href="/Home/Index" style="color:#f47e1e;">Click here to continue shopping</a></h1>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- cart area end  -->

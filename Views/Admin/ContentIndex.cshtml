@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Content>
+
+@{
+    ViewData["Title"] = "ContentIndex";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN ContentES TABLE-->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-comments"></i>General View of <b>Content</b>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse">
+                    </a>
+                    <a href="javascript:;" class="reload">
+                    </a>
+                    <a href="javascript:;" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-striped table-hover" style="cursor:pointer;">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.ContentID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.Active)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.ContentName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model=>model.ContentInfo)
+                                </th>
+                                <th style="text-align:center">
+                                    CRUD
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    @if (item.Active == true)
+                                    {
+                                        <td>@Html.DisplayFor(model=>item.ContentID)</td>
+                                        <td class="@(item.Active ? "is-active" : "is-inactive")">@Html.DisplayFor(modelItem=>item.Active)</td>
+                                        <td>@Html.DisplayFor(model=>item.ContentName)</td>
+                                        <td>@Html.DisplayFor(model=>item.ContentInfo)</td>
+                                        <td>
+                                            <a asp-action="ContentEdit" asp-route-id="@item.ContentID" class="btn btn-primary">EDİT</a>
+                                            <a asp-action="ContentDelete" asp-route-id="@item.ContentID" class="btn btn-danger">DEACTIVATE</a>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>@Html.DisplayFor(model=>item.ContentID)</td>
+                                        <td class="@(item.Active ? "is-active" : "is-inactive")">@Html.DisplayFor(modelItem=>item.Active)</td>
+                                        <td>@Html.DisplayFor(model=>item.ContentName)</td>
+                                        <td>@Html.DisplayFor(model=>item.ContentInfo)</td>
+                                        <td>
+                                            <a asp-action="ContentEdit" asp-route-id="@item.ContentID" class="btn btn-primary">EDİT</a>
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END ContentES TABLE-->
+        <p>
+            <a asp-action="ContentCreate" asp-controller="Admin" class="btn btn-success">CREATE NEW CONTENT</a>
+        </p>
+    </div>
+</div>
+

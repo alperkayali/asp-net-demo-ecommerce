@@ -1,0 +1,105 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "CategoryCreate";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <!-- BEGIN CATEGORY CREATE FORM-->
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="portlet box purple ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Category <b>Creation</b> Form
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                    <a href="" class="reload">
+                    </a>
+                    <a href="" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" action="/Admin/CategoryCreate" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Type a new Category Title:</label>
+                            <div class="col-md-9">
+                                <input type="text" name="CategoryName" class="form-control input-lg" placeholder="Name of the Category" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Chosse a Category</label>
+                            <div class="col-md-9">
+                                @Html.DropDownList("ParentID",(IEnumerable<SelectListItem>?)ViewData["MainCategoryList"],"MAIN",new { @class = "form-control input-lg"})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Active Category </label>
+                            <div class="col-md-9">
+                                <input type="checkbox" name="Active" value="true" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions right1">
+                        <input type="submit" name="btn_kaydet" value="ADD" class="btn green" />
+                        <a asp-action="CategoryIndex" class="btn blue">Categories Table</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END CATEGORY CREATE FORM-->
+    <!-- BEGIN CATEGORIES TREEVIEW-->
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="portlet blue-hoki box">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs"></i>List of <b>Categories</b> with <b>SubCategories</b>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div id="tree_1" class="tree-demo">
+                    <ul>
+                        @foreach (var item in Model.Where(c => c.ParentID == 0))
+                        {
+                            <li>
+                                <a href="/Admin/CategoryDetails/@item.CategoryID">
+                                    <span class="@(item.Active ? "is-active" : "is-inactive" )" />
+                                    @Html.DisplayFor(model => item.CategoryName)
+                                </a>
+
+                                <ul>
+                                    @foreach (var subitem in Model)
+                                    {
+                                        if (item.CategoryID == subitem.ParentID)
+                                        {
+                                            <li>
+                                                <a href="/Admin/CategoryDetails/@subitem.CategoryID">
+                                                    <span class="@(subitem.Active ? "is-active" : "is-inactive" )">
+                                                        @Html.DisplayFor(model => subitem.CategoryName)
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END CATEGORIES TREEVIEW-->
+</div>

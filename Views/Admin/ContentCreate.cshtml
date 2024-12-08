@@ -1,0 +1,59 @@
+﻿@model List<Content>
+
+@{
+    ViewData["Title"] = "ContentCreate";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <!-- BEGIN CONTENT CREATE FORM-->
+    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> Content <b>Creation</b> Form
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse">
+                    </a>
+                    <a href="" class="reload">
+                    </a>
+                    <a href="" class="remove">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" role="form" action="/Admin/ContentCreate" method="post">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Type a new Content Title:</label>
+                            <div class="col-md-9">
+                                <input type="text" name="ContentName" class="form-control input-lg" placeholder="Name of the Content" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Context of the Content:</label>
+                            <div class="col-md-9">
+                                <input type="text" name="ContentInfo" class="form-control input-lg" placeholder="Write detailed description about Content:" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Active Content:</label>
+                            <div class="col-md-9">
+                                <input type="checkbox" name="Active" value="true"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-actions right1">
+                        <input type="submit" value="ADD" class="btn green" />
+                        <a asp-action="ContentIndex" class="btn blue">Contents Table</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END CONTENT CREATE FORM-->
+</div>

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Supplier>
+<!-- Brand area start -->
+<div class="brand-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="all-p-title">
+                    <h3>BRANDS WE WORK WITH</h3>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="all-brand singal-p">
+                @foreach (var item in Model)
+                {
+                    <div class="singal_brand">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <a href="/Home/SupplierPage/@item.SupplierID"> <img src="~/img/@item.PhotoPath" alt="" style="height:72px; width:216px;" /> </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer top area start -->
+
+<section id="sp-bottom-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 sp-bottomcontact">
+                <div class="sp-column ">
+                    <div class="sp-module ">
+                        <h3 class="sp-module-title"><span>ABOUT US</span></h3>
+                        <div class="sp-module-content">
+                            <div class="custom">
+                                <div class="t-bottom-content">
+
+                                    <p class="adress">
+                                        <em class="fa fa-map-marker"></em>
+                                        <span class="ft-content">
+                                            @await Component.InvokeAsync("Adress")
+                                        </span>
+                                    </p>
+
+                                    <p class="phone">
+                                        <em class="fa fa-phone"></em>
+                                        <span class="ft-content">@await Component.InvokeAsync("Telephone")</span>
+                                    </p>
+
+                                    <p class="email">
+                                        <em class="fa fa-envelope"></em>
+                                        <span class="ft-content">@await Component.InvokeAsync("Email")</span>
+                                    </p>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 sp-bottomcontact">
+                <div class="sp-column ">
+                    <div class="sp-module Subscribe-area">
+                        <h3 class="sp-module-title">
+                            <span>CORPORATE BRIEFING</span>
+                        </h3>
+                        <div class="sp-module-content">
+                            <p><a href=" /Footer/InformationSecurityPolicy"> <span style="color:white" ;>Data Security Policy</span> </a></p>
+                            <p>
+                                <a href="/Footer/OccupationalSafetyPolicy"> <span style="color:white;">Occupational Safety and Environmental Policy</span> </a>
+                            </p>
+                            <div class="sp-module-content">
+                                <p>
+                                    <span style="color:white;">@await Component.InvokeAsync("Currency")</span> | 
+                                    <span style="color:white;">@await Component.InvokeAsync("Weather")</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="sp-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                Copyright &copy; 2023 <a href="https://www.alperkayali.com/" target="_blank">Alper Kayalı</a> - All Rights Reserved
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <div class="payment-logo">
+                    <img src="~/img/payment.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer top area end -->

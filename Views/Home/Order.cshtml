@@ -1,0 +1,258 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<!-- cart area start  -->
+<div class="wishlist-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-12 "></div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 ">
+                        <div class="cart_totals">
+                            <h2>Your informations before payment</h2>
+                            <div class="total_table">
+                                <table class="table-responsive">
+                                    <tbody>
+
+                                        <tr class="cart-subtotal">
+                                            <th>Name - Surname</th>
+                                            <td><span class="amount">@Model.NameSurname</span></td>
+                                        </tr>
+
+                                        <tr class="cart-subtotal">
+                                            <th>E-Mail</th>
+                                            <td><span class="amount">@Model.Email</span></td>
+                                        </tr>
+
+                                        <tr class="cart-subtotal">
+                                            <th>Phone Number</th>
+                                            <td><span class="amount">@Model.Telephone</span></td>
+                                        </tr>
+
+                                        <tr class="cart-subtotal">
+                                            <th>Invoice Adress</th>
+                                            <td><span class="amount">@Model.InvoicesAdress</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="container">
+                                    <div class="submit_crt">
+                                        <a asp-action="UserInfoUpdate" asp-route-id="@Model.UserID" title="Proceed to Checkout">
+                                            <input type="button" class="update_cart" value="Update Info" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="@Url.Action("Order","Home")" method="post" id="com-form-login">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-12 "></div>
+                        <div class="col-lg-8 col-md-8 col-sm-12 ">
+                            <div class="cart_totals">
+                                <h2>Credit Cart Info</h2>
+                                <div class="total_table">
+                                    <table class="table-responsive">
+                                        <tbody>
+
+                                            <tr class="cart-subtotal">
+                                                <th>Cart No:</th>
+                                                <td>
+                                                    <span class="amount">
+                                                        <input type="text" name="CreditCartNo" maxlength="16" class="inputbox" onkeypress="return numberonly(this, event)" placeholder="XXXX-XXXX-XXXX-XXXX" required />
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="cart-subtotal">
+                                                <th>Expire Month:</th>
+                                                <td>
+                                                    <span class="amount">
+                                                        <select name="ExpireMonth" required>
+                                                            <option value="">-- Select --</option>
+                                                            <option value="1">01</option>
+                                                            <option value="2">02</option>
+                                                            <option value="3">03</option>
+                                                            <option value="4">04</option>
+                                                            <option value="5">05</option>
+                                                            <option value="6">06</option>
+                                                            <option value="7">07</option>
+                                                            <option value="8">08</option>
+                                                            <option value="9">09</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                        </select>
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="cart-subtotal">
+                                                <th>Expire Year:</th>
+                                                <td>
+                                                    <span class="amount">
+                                                        <select name="ExpireYear" required>
+                                                            <option value="">-- Select --</option>
+                                                            <option value="23">23</option>
+                                                            <option value="24">24</option>
+                                                            <option value="25">25</option>
+                                                            <option value="26">26</option>
+                                                            <option value="27">27</option>
+                                                            <option value="28">28</option>
+                                                            <option value="29">29</option>
+                                                            <option value="30">30</option>
+                                                        </select>
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="cart-subtotal">
+                                                <th>CVV</th>
+                                                <td>
+                                                    <span class="amount">
+                                                        <input type="text" name="CVV" maxlength="3" class="inputbox" required onkeypress="return numberonly(this, event)" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-12 "></div>
+                        <div class="col-lg-8 col-md-8 col-sm-12 ">
+                            <div class="cart_totals">
+                                <h2>Invoice Info</h2>
+                                <div class="total_table">
+                                    <table class="table-responsive">
+                                        <tbody>
+
+                                            <tr class="cart-subtotal">
+                                                <th>Invoice Type:</th>
+                                                <td>
+                                                    <span class="amount">
+                                                        @Html.RadioButton("InvoiceType","rbIndividual", new{value="rbIndividual",@checked = true}) Individual
+                                                        @Html.RadioButton("InvoiceType","rbCorporate", new{value="rbCorporate"}) Corporate
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="cart-subtotal" id="tr_tckimlik">
+                                                <th>Citizenship Number:</th>
+                                                <td>
+                                                    <span class="amount">
+                                                        <input type="text" name="txt_individual" maxlength="11" class="inputbox" onkeypress="return numberonly(this, event)" required />
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="cart-subtotal" id="tr_vergino" style="display:none;">
+                                                <th>Corporate Tax Number:</th>
+                                                <td>
+                                                    <span class="amount">
+                                                        <input type="text" name="txt_corporate" maxlength="10" class="inputbox" onkeypress="return numberonly(this, event)" style="background-color:#FDF7C3;" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm-12 "></div>
+                        <div class="col-lg-8 col-md-8 col-sm-12 ">
+                            <div class="cart_totals">
+                                <h2>Sales Contract</h2>
+                                <div class="total_table">
+                                    <table class="table-responsive">
+                                        <tbody>
+                                            <tr class="cart-subtotal">
+                                                <span class="amount">
+                                                    <textarea cols="102" rows="10">
+The standard Lorem Ipsum passage, used since the 1500s
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+
+1914 translation by H. Rackham
+"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+
+Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+
+1914 translation by H. Rackham
+"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
+                                                        </textarea>
+                                                    <br />
+                                                    <br />
+                                                    <h4 style="font-weight:700">
+                                                        I read and understand the entire sales contract: @Html.CheckBox("chk_accept",false)
+                                                    </h4>
+                                                </span>
+                                            </tr>
+                                        </tbody>
+                                    </table>                                    
+                                </div>
+                            </div>
+                            <div class="submit_crt" style="text-align:right; display:none;" id="confirmPay">
+                                <a href="@Url.Action("Order","Home")" title="Proceed to Checkout">
+                                    <input type="submit" class="update_cart" value="PROCEED CHECKOUT" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- cart area end  -->
+
+
+<script>
+    $('input[type=radio][name = InvoiceType]').on('change', function () {
+
+        if ($(this).val() == 'rbIndividual') {
+            $("#tr_tckimlik").css("display", "block")
+            $("#tr_vergino").css("display", "none")
+            $("#txt_individual").attr("required", "true")
+            $("#txt_corporate").removeAttr("required")
+        }
+
+        else {
+            $("#tr_tckimlik").css("display", "none")
+            $("#tr_vergino").css("display", "block")
+            $("#txt_corporate").attr("required", "true")
+            $("#txt_individual").removeAttr("required")
+        }
+    })
+
+    $('input[type=checkbox][name=chk_accept]').on('change', function () {
+
+        if ($(this).prop('checked')) {
+            $("#confirmPay").css("display","block")
+        }
+
+        else
+        {
+            $("#confirmPay").css("display", "none")
+        }
+    })
+
+
+</script>
+
